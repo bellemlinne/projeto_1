@@ -20,7 +20,7 @@ sp_input <- read.csv(file = "./dados/ocorrencias/sp_input_setupsdmdata.csv", sep
 
 ## Carregando as variáveis ambientais
 
-lista_arquivos <- list.files("./dados/raster/variaveis_cortadas_pratica/", full.names = T, pattern = ".tif")
+> lista_arquivos <- list.files("./dados/raster/variaveis_cortadas_pratica/", full.names = T, pattern = ".tif")
 
 vars_stack <-stack(lista_arquivos)
 
@@ -49,12 +49,12 @@ setup_sdmdata_1 <- setup_sdmdata(species_name = unique(sp_input[1]),
               seed = 512,
               buffer_type = "mean",
               png_sdmdata = TRUE,
-              n_back = 100,
+              n_back = 30,
               clean_dupl = TRUE,
               clean_uni = TRUE,
               clean_nas = TRUE,
-              geo_filt = FALSE,
-              geo_filt_dist = 10,
+              #geo_filt = FALSE,
+              #geo_filt_dist = 10,
               select_variables = TRUE,
               sample_proportion = 0.5,
               cutoff = 0.7)
